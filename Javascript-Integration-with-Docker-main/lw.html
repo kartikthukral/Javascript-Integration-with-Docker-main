@@ -1,0 +1,43 @@
+<head>
+	<link rel="stylesheet" href="web.css">
+</head>
+<script>
+function lw(){
+var i=document.getElementById("in1").value
+
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET","http://192.168.29.219/cgi-bin/lw.py?X=" +i,true);
+xhr.send();
+//output from above URL
+xhr.onload = function() {
+	var output = xhr.responseText;
+	document.getElementById("d1").innerHTML=output;
+}
+
+}
+</script>
+
+<body>
+	<h1> Docker Terminal</h1>
+<div class="box">
+<h2>Enter your command </h2>
+<input id="in1"/>
+<br/>
+<pre>
+<div id="d1"></div>
+</pre>
+<button onclick="lw()" class="btn">click here</button> 
+<br/>
+</div>
+<div class="hero"></div>
+<div class="bubbles">
+	<img src="bubbleImage.png">
+	<img src="bubbleImage.png">
+	<img src="bubbleImage.png">
+	<img src="bubbleImage.png">
+	<img src="bubbleImage.png">
+	<img src="bubbleImage.png">
+	<img src="bubbleImage.png">
+	<img src="bubbleImage.png"></div>
+</body>
